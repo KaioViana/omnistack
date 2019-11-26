@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: 0;
+}
+
+
+html, body, #root {
+    min-height: 100%;
+}
+
+body {
+    background: #000 url('./assets/background.jpg') no-repeat; /*cor, img background*/
+    background-size: cover; /*background cobrindo todo o fundo*/
+    -webkit-font-smoothing: antialiased !important;
+}
+
+body, input, button {
+    font-family: 'roboto', Arial, Helvetica, sans-serif; /*tipo de fonte*/
+    font-size: 14px; /*tamanho da fonte*/
+}
+
+.container {
+    margin: 80px auto 0; /*posicionando o conteúdo*/
+    max-width: 450px; /*largura máxima*/
+    width: 100%; /*fazendo a largura sempre ocupar 100% da tela*/
+    display: flex; /*"soltando" o display*/
+    flex-direction: column; /*tipo de alinhamento*/
+    align-items: center; /* alinhando no centro*/
+
+}
+
+.content {
+    width: 100%; /*largura ocupando 100%*/
+    background: #FFF; /*colorindo o fundo*/
+    margin-top: 50px; /*distância do topo*/
+    border-radius: 4px; /*arredondando as bordas*/
+    padding: 30px; /*distância interna*/
+}
+
+.content > p {
+    font-size: 22px; /*tamanho da fonte*/
+    line-height: 30px; /*altura da linha*/
+    margin-bottom: 30px; /*disância da margem de baixo*/
+}
+
+.content form {
+    display: flex; /*"soltando" o display*/
+    flex-direction: column; /*tipo de alinhamento*/
+}
+
+.content form label {
+    font-size: 14px; /*tamanho da fonte*/
+    color: #444; /*cor*/
+    font-weight: bold; /*Negrito*/ 
+    margin-bottom: 8px; /*distância da parte de baixo*/
+}
+
+.content form label span {
+    font-weight: normal; /*tipo da fonte*/
+    color: #999; /*cor*/
+    font-size: 12px; /*tamanho da fonte*/
+}
+
+.content form input {
+    margin-bottom: 20px; /*distância da parte de baixo*/
+    border: 1px solid #ddd; /*estilizando input*/
+    border-radius: 2px; /*arredondando as bordas*/
+    height: 45px; /*largura da caixa de input*/
+    padding: 0 15px; /*margem interna*/
+    font-size: 16px; /*tamanho da fonte*/
+}
+
+.content button.btn {
+    border: 0; /*tirando a borda*/
+    border-radius: 2px; /*arredondando os cantos*/
+    width: 100%; /*preenchendo 100% do espaço*/
+    height: 42px; /*largura*/
+    padding: 0 20px; /*margem interna*/
+    font-size: 16px; /*tamanho da fonte*/
+    font-weight: bold; /*tipo da fonte*/
+    background: #f05a5b; /*cor do fundo*/
+    color: #fff; /*cor da letra*/
+    cursor: pointer; /*tipo do cursor*/
+}
+
+
+.content button.btn:hover {
+    background: #e14f50; /*mudar a cor ao passar o cursor*/
+}
