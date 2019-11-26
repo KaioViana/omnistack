@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 
 import Login from './pages/Login';
+import Dasboard from './pages/Dashboard'
 
 
 export default function Routes() {
@@ -10,6 +11,7 @@ export default function Routes() {
         <BrowserRouter>
             <Switch>
                 <Route path='/' exact component={Login}/>
+                <Route path='/dashboard' component={Dasboard}/>
             </Switch>
         </BrowserRouter>
     );

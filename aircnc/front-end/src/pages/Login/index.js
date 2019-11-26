@@ -13,7 +13,7 @@ export default function Login({ history }) {
         const { _id } = response.data;
 
         localStorage.setItem('user', _id);
-        console.log(_id);
+        console.log("Usuários:", _id);
 
         history.push('/dashboard');
     }
