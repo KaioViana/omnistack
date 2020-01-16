@@ -23,20 +23,12 @@ INTRODUÇÃO  À ROTAS:
 */
 
 const { Router } = require('express');
-const axios = require('axios') // módulo para fazer chamadas para outras api's
+const DevController = require('./controllers/DevController');
 
 
 const routes = Router();
 
 // rota para cadastrar
-routes.post('/devs', async (req, res) => {
-    const { github_username } = req.body;
-    const response = await axios.get(`https://api.github.com/users/${github_username}`);
-    const { name=login, avatar_url, bio } = response.data;
-
-    console.log(name, avatar_url, bio);
-
-    return res.json(response.data);
-});
+routes.post('/devs', DevController.store);
 
 module.exports = routes;
