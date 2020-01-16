@@ -1,3 +1,6 @@
+/*
+    Arquivo para armazenar longitude e latitude
+*/
 const mongoose = require('mongoose');
 
 
