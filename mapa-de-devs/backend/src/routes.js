@@ -28,7 +28,7 @@ const DevController = require('./controllers/DevController');
 
 const routes = Router();
 
-// rota para cadastrar
-routes.post('/devs', DevController.store);
+routes.get('/devs', DevController.index);
+routes.post('/devs', DevController.store);// rota para cadastrar
 
 module.exports = routes;
