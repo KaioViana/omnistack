@@ -3,9 +3,10 @@ import { StyleSheet, Image, View, Text, TouchableOpacity} from 'react-native';
 import MapView, { Marker, Callout } from 'react-native-maps';
 import { requestPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
 import {MaterialIcons} from '@expo/vector-icons'
-import { apisAreAvailable } from 'expo';
-import api from '../services/api';
 import { TextInput } from 'react-native-gesture-handler';
+import api from '../services/api';
+import { connect, disconnect } from '../services/socket';
+
 
 
 function Main({ navigation }) {
@@ -34,6 +35,15 @@ function Main({ navigation }) {
     }, []);
 
 
+    function setupWebsocket() {
+        const { latitude, longitude } = currentRegion;
+        connect(
+            latitude,
+            longitude,
+            techs,
+        );
+    }
+
     async function loadDevs() {
         const {latitude, longitude} = currentRegion; 
         const response = await api.get('/devs', {
@@ -44,6 +54,7 @@ function Main({ navigation }) {
             },
         });
         setDevs(response.data);
+        setupWebsocket();
     };
 
     function handleRegionChange(region) {
