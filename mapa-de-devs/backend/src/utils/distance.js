@@ -18,6 +18,7 @@ module.exports = function getDistanceFromLatLonInKm(centerCoordinates, pointCoor
     ;
 
     const center = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    console.log(radius * center)
     
     return radius * center;
 };

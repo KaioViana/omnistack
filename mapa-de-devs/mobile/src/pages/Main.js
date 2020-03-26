@@ -5,7 +5,7 @@ import { requestPermissionsAsync, getCurrentPositionAsync } from 'expo-location'
 import {MaterialIcons} from '@expo/vector-icons'
 import { TextInput } from 'react-native-gesture-handler';
 import api from '../services/api';
-import { connect, disconnect } from '../services/socket';
+import { connect, disconnect, subscribeToNewDevs } from '../services/socket';
 
 
 
@@ -34,8 +34,14 @@ function Main({ navigation }) {
         loadInitialPosition();
     }, []);
 
+    useEffect(() => {
+        subscribeToNewDevs(dev => setDevs([...devs, dev]));
+    }, [devs]);
+
 
     function setupWebsocket() {
+        
+        disconnect();
         const { latitude, longitude } = currentRegion;
         connect(
             latitude,
