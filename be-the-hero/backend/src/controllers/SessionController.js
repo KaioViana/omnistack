@@ -7,7 +7,7 @@ module.exports = {
         .where('id', id)
         .select('name')
         .first();
-
+ 
         if(!ong) {
             return res.status(400).json({error: 'Not ONG found with this ID'});
         }
